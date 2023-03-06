@@ -35,4 +35,12 @@ public class PlayerController : MonoBehaviour
     // {
     //     gameManager.GameOver();
     // }
+
+    private void OnTriggerEnter2D(Collider2D other) 
+    {
+        if(other.gameObject.tag == "Spike") 
+        {
+            Debug.Log("1");
+        }  
+    }
 }
