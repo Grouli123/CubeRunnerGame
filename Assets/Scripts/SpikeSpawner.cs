@@ -14,7 +14,7 @@ public class SpikeSpawner : MonoBehaviour
     {
         test = Random.Range(0, pipe.Length);
         GameObject newpipe = Instantiate(pipe[test]);
-        newpipe.transform.position = transform.position + new Vector3(8.5f, Random.Range(-height, height), 0);
+        newpipe.transform.position = transform.position + new Vector3(10.5f, Random.Range(-height, height), 0);
     }
 
     private void Update()
@@ -23,7 +23,7 @@ public class SpikeSpawner : MonoBehaviour
         {
             test = Random.Range(0, pipe.Length);
             GameObject newpipe = Instantiate(pipe[test]);
-            newpipe.transform.position = transform.position + new Vector3(8.5f, Random.Range(-height, height), 0);
+            newpipe.transform.position = transform.position + new Vector3(10.5f, Random.Range(-height, height), 0);
             Destroy(newpipe, 15);
             timer = 0;
         }    

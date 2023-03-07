@@ -6,6 +6,7 @@ public class PlayerController : MonoBehaviour
 {
     [SerializeField] private GameManager _gameManager;
     [SerializeField] private float _gravityScale = 1f;
+    private SpriteRenderer _playerImage;
     private Rigidbody2D _rb;
     private bool _isGroundBot;
     private bool _isGround;
@@ -14,6 +15,8 @@ public class PlayerController : MonoBehaviour
     {
         _isGroundBot = true;
         _rb = GetComponent<Rigidbody2D>();
+        _playerImage = GetComponent<SpriteRenderer>();
+        
     }
 
     private void Update()
@@ -23,11 +26,13 @@ public class PlayerController : MonoBehaviour
             if (Input.GetMouseButtonDown(0) && _isGroundBot == true)
             {
                 _rb.gravityScale = -_gravityScale;
+                _playerImage.flipY = true;
                 _isGroundBot = false;
             }
             else if (Input.GetMouseButtonDown(0) && _isGroundBot == false)
             {
                 _rb.gravityScale = _gravityScale;
+                _playerImage.flipY = false;
                 _isGroundBot = true;
             }
         }
