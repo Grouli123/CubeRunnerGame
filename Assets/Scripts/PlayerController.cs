@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float _gravityScale = 1f;
     private Rigidbody2D _rb;
     private bool _isGroundBot;
+    private bool _isGround;
 
     private void Start()
     {
@@ -17,17 +18,20 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {        
-        if(Input.GetMouseButtonDown(0) && _isGroundBot == true)
+        if (_isGround == true)
         {
-            // _rbv_grabityScale = Vector2.up *_gravityScale;
-            _rb.gravityScale = -_gravityScale;
-            _isGroundBot = false;
+            if (Input.GetMouseButtonDown(0) && _isGroundBot == true)
+            {
+                _rb.gravityScale = -_gravityScale;
+                _isGroundBot = false;
+            }
+            else if (Input.GetMouseButtonDown(0) && _isGroundBot == false)
+            {
+                _rb.gravityScale = _gravityScale;
+                _isGroundBot = true;
+            }
         }
-        else if(Input.GetMouseButtonDown(0) && _isGroundBot == false)
-        {
-            _rb.gravityScale =_gravityScale;
-            _isGroundBot = true;
-        }
+        
         
     }
 
@@ -38,5 +42,18 @@ public class PlayerController : MonoBehaviour
             Debug.Log("Game Over");
             _gameManager.GameOver();
         }  
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.gameObject.CompareTag("Ground"))
+        {
+            _isGround = true;
+        }
+        
+    }
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        _isGround = false;
     }
 }
