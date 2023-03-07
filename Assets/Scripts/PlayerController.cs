@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    [SerializeField] private GameManager gameManager;
+    [SerializeField] private GameManager _gameManager;
     [SerializeField] private float _gravityScale = 1f;
     private Rigidbody2D _rb;
     private bool _isGroundBot;
@@ -31,17 +31,12 @@ public class PlayerController : MonoBehaviour
         
     }
 
-    // private void OnCollisionEnter2D(Collision2D collision)
-    // {
-    //     gameManager.GameOver();
-    // }
-
     private void OnTriggerEnter2D(Collider2D other) 
     {
         if(other.gameObject.tag == "Spike") 
         {
-            Debug.Log("1");
-            gameManager.GameOver();
+            Debug.Log("Game Over");
+            _gameManager.GameOver();
         }  
     }
 }
