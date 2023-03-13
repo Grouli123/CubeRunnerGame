@@ -20,24 +20,25 @@ public class PlayerController : MonoBehaviour
     }
 
     private void Update()
-    {        
-        if (_isGround == true)
-        {
-            if (Input.GetMouseButtonDown(0) && _isGroundBot == true)
+    {  
+        if(_gameManager.isGameOver == false)
+        {      
+            if (_isGround == true)
             {
-                _rb.gravityScale = -_gravityScale;
-                _playerImage.flipY = true;
-                _isGroundBot = false;
+                if (Input.GetMouseButtonDown(0) && _isGroundBot == true)
+                {
+                    _rb.gravityScale = -_gravityScale;
+                    _playerImage.flipY = true;
+                    _isGroundBot = false;
+                }
+                else if (Input.GetMouseButtonDown(0) && _isGroundBot == false)
+                {
+                    _rb.gravityScale = _gravityScale;
+                    _playerImage.flipY = false;
+                    _isGroundBot = true;
+                }
             }
-            else if (Input.GetMouseButtonDown(0) && _isGroundBot == false)
-            {
-                _rb.gravityScale = _gravityScale;
-                _playerImage.flipY = false;
-                _isGroundBot = true;
-            }
-        }
-        
-        
+        }        
     }
 
     private void OnTriggerEnter2D(Collider2D other) 
@@ -46,6 +47,7 @@ public class PlayerController : MonoBehaviour
         {
             Debug.Log("Game Over");
             _gameManager.GameOver();
+            _gameManager.isGameOver = true;
         }  
     }
 

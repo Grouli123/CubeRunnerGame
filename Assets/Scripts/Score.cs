@@ -7,29 +7,35 @@ using Scriptable;
 public class Score : MonoBehaviour
 {
     [SerializeField] private IntegerVariable _scoreCounter;
+    [SerializeField] private GameManager _gameManager;
     private TextMeshProUGUI _score;
     [SerializeField] private float _time;
-    private int _scoreInt;
+    public int scoreInt;
 
     public float _scorePlus; // добавить проверку, если меньше 0, то не работает
     public float _scoreStepIncrease;
     public float _maxScoreIncrease;
 
+
     private void Start() 
     {
         _score = GetComponent<TextMeshProUGUI>();
-        _scoreCounter.Listeners += UpdateTextField;         
-        UpdateTextField(_scoreCounter.GetValue());
+        _time = 0;
+        _scoreCounter.Listeners += UpdateTextField; 
+        UpdateTextField(_scoreCounter.GetValue());        
         StartCoroutine(ScoreIncrease());
     }
 
     private void Update() 
     {
-        _time += Time.deltaTime * _scorePlus;
-        _score.text = _time.ToString();
-        _scoreInt = ((int)_time);
-        _score.text = Mathf.Round(_time).ToString();               
-        _scoreCounter.SetValue(_scoreInt);
+        if(_gameManager.isGameOver == false)
+        { 
+            _time += Time.deltaTime * _scorePlus;
+            _score.text = _time.ToString();
+            scoreInt = ((int)_time);
+            _score.text = Mathf.Round(_time).ToString();      
+            _scoreCounter.SetValue(scoreInt);            
+        }
     }
 
     private void OnDestroy()
@@ -52,6 +58,5 @@ public class Score : MonoBehaviour
             Debug.Log(_time);
             StartCoroutine(ScoreIncrease());
         }
-        
     }
 }
