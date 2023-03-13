@@ -45,7 +45,6 @@ public class PlayerController : MonoBehaviour
     {
         if(other.gameObject.tag == "Spike") 
         {
-            Debug.Log("Game Over");
             _gameManager.GameOver();
             _gameManager.isGameOver = true;
         }  

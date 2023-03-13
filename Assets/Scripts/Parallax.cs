@@ -39,7 +39,6 @@ public class Parallax : MonoBehaviour
         {
             speed += changeSpeed;       
             // _meshRenderer.material.mainTextureOffset += new Vector2(speed * Time.deltaTime, 0);
-            Debug.Log(speed);
             StartCoroutine(SpeedIncrease());
         }
     }

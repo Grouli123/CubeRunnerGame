@@ -54,8 +54,7 @@ public class Score : MonoBehaviour
 
         if(_scorePlus < _maxScoreIncrease)
         {
-            _scorePlus += _scoreStepIncrease;        
-            Debug.Log(_time);
+            _scorePlus += _scoreStepIncrease;      
             StartCoroutine(ScoreIncrease());
         }
     }
