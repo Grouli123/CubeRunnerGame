@@ -3,7 +3,6 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-//    [SerializeField] private GameObject _gameOverCanvas;
    [SerializeField] private GameObject _boardScore;
 
    [SerializeField] private GameObject _startButton;
@@ -13,31 +12,20 @@ public class GameManager : MonoBehaviour
    [SerializeField] private SpikeSpawner _spikeSpawner;
 
    [HideInInspector] public bool isGameOver;
-
-
-
-
-
    public Animator _animatorHit;
 
     private void Start()
     {        
         _animatorHit.GetComponent<Animator>();
-
-
-
-
         _spawner.SetActive(false);
         Time.timeScale = 0;
         _boardScore.SetActive(false);
         _startButton.SetActive(true);
-        // _gameOverCanvas.SetActive(false);
         Debug.Log("startGame");
     }
 
     public void GameOver()
     {
-        // _gameOverCanvas.SetActive(true);
         _boardScore.SetActive(true);
         Time.timeScale = 0;
     }

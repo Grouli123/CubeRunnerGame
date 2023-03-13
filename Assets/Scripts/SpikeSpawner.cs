@@ -27,17 +27,16 @@ public class SpikeSpawner : MonoBehaviour
     {
         if(isTest == true)
         {
-        if(timer > maxTime)
-        {
-            pointOfPrefabs = Random.Range(0, pipe.Length);
-            newpipe = Instantiate(pipe[pointOfPrefabs]);
-            newpipe.transform.position = transform.position + new Vector3(10.5f, Random.Range(-height, height), 0);
-            Destroy(newpipe, 15);
-            timer = 0;
-        }    
-       
-        timer += Time.deltaTime;
-
+            if(timer > maxTime)
+            {
+                pointOfPrefabs = Random.Range(0, pipe.Length);
+                newpipe = Instantiate(pipe[pointOfPrefabs]);
+                newpipe.transform.position = transform.position + new Vector3(10.5f, Random.Range(-height, height), 0);
+                Destroy(newpipe, 15);
+                timer = 0;
+            }    
+        
+            timer += Time.deltaTime;
         }     
     }
 }
