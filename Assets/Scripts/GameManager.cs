@@ -11,13 +11,22 @@ public class GameManager : MonoBehaviour
 
    [SerializeField] private GameObject _openBoardStats;
    [SerializeField] private GameObject _statsButton;
+   
+   [SerializeField] private GameObject _openUserDataBoard;
+   [SerializeField] private GameObject _userDataButton;
+   
+   [SerializeField] private GameObject _openSignUpBoard;
+   [SerializeField] private GameObject _signUpButton;
 
    public Animator _animatorHit;
 
     private void Start()
     {        
         _statsButton.SetActive(true);
+        _openSignUpBoard.SetActive(false);
         _openBoardStats.SetActive(false);
+        _openUserDataBoard.SetActive(false);
+        _userDataButton.SetActive(true);
         _animatorHit.GetComponent<Animator>();
         _spawner.SetActive(false);
         Time.timeScale = 0;
@@ -52,11 +61,42 @@ public class GameManager : MonoBehaviour
     {
         _openBoardStats.SetActive(true);
         _statsButton.SetActive(false);
+        _userDataButton.SetActive(true);
+        _openUserDataBoard.SetActive(false);
+        _openSignUpBoard.SetActive(false);
     }
 
     public void CloseStatsBoard()
     {
         _openBoardStats.SetActive(false);
         _statsButton.SetActive(true);
+    }
+
+    public void OpenUserDataBoard()
+    {
+        _statsButton.SetActive(true);
+        _openBoardStats.SetActive(false);
+        _userDataButton.SetActive(false);
+        _openUserDataBoard.SetActive(true);
+    }
+
+    public void CloseUserDataBoard()
+    {
+        _userDataButton.SetActive(true);
+        _openSignUpBoard.SetActive(false);
+        _openUserDataBoard.SetActive(false);
+        _statsButton.SetActive(true);
+    }
+
+    public void OpenSignUpBoard()
+    {
+        _openSignUpBoard.SetActive(true);
+        _openUserDataBoard.SetActive(false);
+    }
+
+    public void OpenSignInBoard()
+    {
+        _openSignUpBoard.SetActive(false);
+        _openUserDataBoard.SetActive(true);
     }
 }
