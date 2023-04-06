@@ -30,11 +30,18 @@ public class Score : MonoBehaviour
     {
         if(_gameManager.isGameOver == false)
         { 
-            _time += Time.deltaTime * _scorePlus;
-            _score.text = _time.ToString();
-            scoreInt = ((int)_time);
-            _score.text = Mathf.Round(_time).ToString();      
-            _scoreCounter.SetValue(scoreInt);            
+            if(_scorePlus <= 0)
+            {
+                Debug.Log("Укажите значения больше 0");
+            }
+            else
+            {
+                _time += Time.deltaTime * _scorePlus;
+                _score.text = _time.ToString();
+                scoreInt = ((int)_time);
+                _score.text = Mathf.Round(_time).ToString();      
+                _scoreCounter.SetValue(scoreInt);            
+            }
         }
     }
 

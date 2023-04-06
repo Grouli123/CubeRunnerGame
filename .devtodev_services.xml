@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<DTDEditorSettings xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" activeWindow="Analytics" LogLevel="Unknown" isAnalyticsEnabled="true" isPushMessagesEnabled="false" activePlatform="Android" pushGameObjectName="" pushGameObjectScriptIndex="0" pushTokenFunctionIndex="0" pushTokenErrorFunctionIndex="0" pushReceivedFunctionIndex="0" pushOpenedFunctionIndex="0">
+  <Credentials>
+    <Credential platform="Android" key="5bd4b689-8b3c-0f5d-8c2b-7c2a7e74c235" />
+    <Credential platform="IOS" key="" />
+  </Credentials>
+</DTDEditorSettings>

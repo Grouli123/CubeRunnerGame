@@ -20,7 +20,7 @@ public class SpikeSpawner : MonoBehaviour
 
         pointOfPrefabs = Random.Range(0, pipe.Length);
         newpipe = Instantiate(pipe[pointOfPrefabs]);
-        newpipe.transform.position = transform.position + new Vector3(10.5f, Random.Range(-height, height), 0);
+        newpipe.transform.position = transform.position + new Vector3(19.5f, Random.Range(-height, height), 0);
     }
 
     private void Update()
@@ -31,7 +31,7 @@ public class SpikeSpawner : MonoBehaviour
             {
                 pointOfPrefabs = Random.Range(0, pipe.Length);
                 newpipe = Instantiate(pipe[pointOfPrefabs]);
-                newpipe.transform.position = transform.position + new Vector3(10.5f, Random.Range(-height, height), 0);
+                newpipe.transform.position = transform.position + new Vector3(19.5f, Random.Range(-height, height), 0);
                 Destroy(newpipe, 15);
                 timer = 0;
             }    
