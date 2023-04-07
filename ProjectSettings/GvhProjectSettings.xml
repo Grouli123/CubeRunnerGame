@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<projectSettings>
+  <projectSetting name="com.google.external-dependency-managerAnalyticsCookie" value="413d2294962440a8bfd089e98817693e" />
+  <projectSetting name="com.google.external-dependency-managerAnalyticsEnabled" value="True" />
+  <projectSetting name="com.google.firebaseAnalyticsCookie" value="a7a7d14047024922bef8a9bae4ae1d2b" />
+  <projectSetting name="com.google.firebaseAnalyticsEnabled" value="True" />
+  <projectSetting name="Google.IOSResolver.VerboseLoggingEnabled" value="False" />
+  <projectSetting name="Google.PackageManagerResolver.VerboseLoggingEnabled" value="False" />
+  <projectSetting name="Google.VersionHandler.VerboseLoggingEnabled" value="False" />
+  <projectSetting name="GooglePlayServices.PromptBeforeAutoResolution" value="False" />
+</projectSettings>

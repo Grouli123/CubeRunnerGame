@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "712347241493",
+    "project_id": "cuberunner-6cb8d",
+    "storage_bucket": "cuberunner-6cb8d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:712347241493:android:6aa3a18881eaa88655121c",
+        "android_client_info": {
+          "package_name": "com.GroulisGame.CubeRunner"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "712347241493-623kd6f16k7a9jc61schu6pmcageluap.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCO79SEg3nyhnKxHXGC5_vNnOoY5kYRNS4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "712347241493-623kd6f16k7a9jc61schu6pmcageluap.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "712347241493-v4doh7am658u1mbh53jfuou704d4psmr.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.GroulisGame.CubeRunner"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
